@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olivo — Cucina &amp; Vino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="loader" aria-hidden="true">
+    <svg class="loader-plate" viewBox="0 0 200 120">
+      <circle class="plate-outer" cx="100" cy="60" r="44" />
+      <circle class="plate-inner" cx="100" cy="60" r="30" />
+      <path class="fork" d="M28 20v80M22 20v18a6 6 0 0 0 12 0V20" />
+      <path class="knife" d="M172 100V20c-6 6-8 18-8 34h8" />
+    </svg>
+    <p class="loader-word">Olivo</p>
+    <p class="loader-note">Cucina &amp; Vino</p>
+  </div>
+
+  <input type="checkbox" id="navToggle" class="nav-toggle">
+
+  <header class="header">
+    <div class="header-bar">
+      <a href="#home" class="logo">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 29V12" />
+          <path d="M16 18c-5 0-8-3-9-8 5 0 8 3 9 8Z" />
+          <path d="M16 14c4 0 7-3 8-7-4 0-7 3-8 7Z" />
+          <ellipse cx="16" cy="6" rx="2.5" ry="3.5" />
+        </svg>
+        Olivo
+      </a>
+
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#tasting">Tasting</a>
+        <a href="#story">Story</a>
+        <a href="#contact">Contact</a>
+        <a href="#account">Account</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="order-btn" id="cartOpen" type="button" aria-label="Open your order">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 11h16a8 8 0 0 1-16 0Z" />
+            <path d="M2 19h20M9 7c0-2 2-2 2-4M13 7c0-2 2-2 2-4" />
+          </svg>
+          <span class="order-label">Order</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <label for="navToggle" class="burger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="kicker">Trattoria &middot; Old Harbour &middot; Since 1998</p>
+          <h1>Slow food, <em>long tables</em> and good wine.</h1>
+          <p class="hero-lead">Fresh pasta rolled every morning, fish from the harbour and a wine list of small Italian vineyards. Come hungry, stay late.</p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-terra">See the menu</a>
+            <a href="#contact" class="btn btn-ghost">Find us</a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-photo">
+            <img src="https://images.unsplash.com/photo-1758405155772-ef0f0077375c?auto=format&fit=crop&w=1400&q=80" alt="Dimly lit restaurant interior in the evening">
+          </div>
+          <div class="hero-plate">
+            <img src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=600&q=80" alt="Tagliatelle with mushrooms on a white plate">
+          </div>
+          <div class="open-chip">
+            <i></i>
+            Open tonight &middot; 18:00 – 23:30
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quick">
+      <div class="container quick-grid">
+        <a href="#contact" class="quick-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+          <div>
+            <span>Address</span>
+            <b>Via del Porto 14, Old Harbour</b>
+          </div>
+        </a>
+        <a href="#contact" class="quick-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" /></svg>
+          <div>
+            <span>Reservations</span>
+            <b>+1 (555) 014-2290</b>
+          </div>
+        </a>
+        <a href="#contact" class="quick-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+          <div>
+            <span>Hours</span>
+            <b>Tue – Sun, 12:00 – 23:30</b>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <section class="menu section" id="menu">
+      <input type="radio" name="tab" id="tAnti" checked>
+      <input type="radio" name="tab" id="tPasta">
+      <input type="radio" name="tab" id="tSecondi">
+      <input type="radio" name="tab" id="tDolci">
+      <input type="radio" name="tab" id="tVino">
+
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">La carta</p>
+          <h2>Our <em>menu</em></h2>
+          <p class="head-note">Seasonal Italian cooking. Prices include service. Ask us about allergies, we are happy to help.</p>
+        </div>
+
+        <div class="tabs reveal">
+          <label for="tAnti">Antipasti</label>
+          <label for="tPasta">Pasta</label>
+          <label for="tSecondi">Secondi</label>
+          <label for="tDolci">Dolci</label>
+          <label for="tVino">Vino</label>
+        </div>
+
+        <div class="menu-grid">
+          <div class="menu-photos">
+            <img class="mp mp-anti" src="https://images.unsplash.com/photo-1571081538808-612772b00e9f?auto=format&fit=crop&w=900&q=80" alt="Burrata with bread">
+            <img class="mp mp-pasta" src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=900&q=80" alt="Pasta with mushrooms">
+            <img class="mp mp-secondi" src="https://images.unsplash.com/photo-1675965218658-bd6f516742ac?auto=format&fit=crop&w=900&q=80" alt="Dinner table with wine glasses">
+            <img class="mp mp-dolci" src="https://images.unsplash.com/photo-1530449791875-f2991d9be1a0?auto=format&fit=crop&w=900&q=80" alt="Tiramisu with berries">
+            <img class="mp mp-vino" src="https://images.unsplash.com/photo-1600673177531-46749442aa63?auto=format&fit=crop&w=900&q=80" alt="Glass of red wine">
+          </div>
+
+          <div class="menu-lists">
+            <ul class="dishes d-anti">
+              <li class="dish">
+                <div class="dish-line"><h3>Burrata &amp; heirloom tomato</h3><i></i><b>$14</b></div>
+                <p>Creamy burrata, sweet tomatoes, basil oil and warm bread. <span class="tag">V</span></p>
+                <button class="add-btn" type="button" data-name="Burrata & heirloom tomato" data-price="14">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Beef carpaccio</h3><i></i><b>$16</b></div>
+                <p>Thin slices of beef, rocket, parmesan and lemon.</p>
+                <button class="add-btn" type="button" data-name="Beef carpaccio" data-price="16">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Fried zucchini flowers</h3><i></i><b>$12</b></div>
+                <p>Filled with ricotta and mint, light crispy batter. <span class="tag">V</span></p>
+                <button class="add-btn" type="button" data-name="Fried zucchini flowers" data-price="12">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Bruschetta trio</h3><i></i><b>$10</b></div>
+                <p>Tomato, olive tapenade and white bean on grilled bread. <span class="tag">VG</span></p>
+                <button class="add-btn" type="button" data-name="Bruschetta trio" data-price="10">Add</button>
+              </li>
+            </ul>
+
+            <ul class="dishes d-pasta">
+              <li class="dish">
+                <div class="dish-line"><h3>Tagliatelle ai funghi</h3><i></i><b>$19</b></div>
+                <p>Fresh egg tagliatelle, wild mushrooms, thyme and butter. <span class="tag">V</span></p>
+                <button class="add-btn" type="button" data-name="Tagliatelle ai funghi" data-price="19">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Spaghetti carbonara</h3><i></i><b>$18</b></div>
+                <p>The Roman way: guanciale, egg yolk, pecorino and black pepper.</p>
+                <button class="add-btn" type="button" data-name="Spaghetti carbonara" data-price="18">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Black truffle tagliolini</h3><i></i><b>$26</b></div>
+                <p>Thin ribbons, parmesan cream and shaved black truffle. <span class="tag">V</span></p>
+                <button class="add-btn" type="button" data-name="Black truffle tagliolini" data-price="26">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Linguine with prawns</h3><i></i><b>$24</b></div>
+                <p>Harbour prawns, cherry tomato, chilli and parsley.</p>
+                <button class="add-btn" type="button" data-name="Linguine with prawns" data-price="24">Add</button>
+              </li>
+            </ul>
+
+            <ul class="dishes d-secondi">
+              <li class="dish">
+                <div class="dish-line"><h3>Grilled sea bass</h3><i></i><b>$29</b></div>
+                <p>Whole fish from the morning market, lemon and salsa verde. <span class="tag">GF</span></p>
+                <button class="add-btn" type="button" data-name="Grilled sea bass" data-price="29">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Slow-braised short rib</h3><i></i><b>$32</b></div>
+                <p>Eight hours in red wine, soft polenta and gremolata. <span class="tag">GF</span></p>
+                <button class="add-btn" type="button" data-name="Slow-braised short rib" data-price="32">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Chicken under a brick</h3><i></i><b>$24</b></div>
+                <p>Crispy skin, rosemary potatoes and roasting juices.</p>
+                <button class="add-btn" type="button" data-name="Chicken under a brick" data-price="24">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Aubergine parmigiana</h3><i></i><b>$20</b></div>
+                <p>Layers of aubergine, tomato and mozzarella, baked until golden. <span class="tag">V</span></p>
+                <button class="add-btn" type="button" data-name="Aubergine parmigiana" data-price="20">Add</button>
+              </li>
+            </ul>
+
+            <ul class="dishes d-dolci">
+              <li class="dish">
+                <div class="dish-line"><h3>Tiramisu della casa</h3><i></i><b>$9</b></div>
+                <p>Mascarpone, espresso-soaked biscuits and cocoa. <span class="tag">V</span></p>
+                <button class="add-btn" type="button" data-name="Tiramisu della casa" data-price="9">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Pistachio cannoli</h3><i></i><b>$8</b></div>
+                <p>Crisp shells filled to order with sweet ricotta. <span class="tag">V</span></p>
+                <button class="add-btn" type="button" data-name="Pistachio cannoli" data-price="8">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Panna cotta with figs</h3><i></i><b>$9</b></div>
+                <p>Vanilla cream, roasted figs and a little honey. <span class="tag">GF</span></p>
+                <button class="add-btn" type="button" data-name="Panna cotta with figs" data-price="9">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Affogato</h3><i></i><b>$7</b></div>
+                <p>Vanilla gelato drowned in a hot espresso shot. <span class="tag">GF</span></p>
+                <button class="add-btn" type="button" data-name="Affogato" data-price="7">Add</button>
+              </li>
+            </ul>
+
+            <ul class="dishes d-vino">
+              <li class="dish">
+                <div class="dish-line"><h3>House red, glass</h3><i></i><b>$9</b></div>
+                <p>Montepulciano d'Abruzzo, soft and fruity.</p>
+                <button class="add-btn" type="button" data-name="House red, glass" data-price="9">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Pinot Nero, glass</h3><i></i><b>$12</b></div>
+                <p>Alto Adige, light body with notes of cherry.</p>
+                <button class="add-btn" type="button" data-name="Pinot Nero, glass" data-price="12">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Prosecco Superiore</h3><i></i><b>$10</b></div>
+                <p>Valdobbiadene, fresh and dry with fine bubbles.</p>
+                <button class="add-btn" type="button" data-name="Prosecco Superiore" data-price="10">Add</button>
+              </li>
+              <li class="dish">
+                <div class="dish-line"><h3>Homemade limoncello</h3><i></i><b>$8</b></div>
+                <p>Made in our kitchen from Amalfi lemons. Served ice cold.</p>
+                <button class="add-btn" type="button" data-name="Homemade limoncello" data-price="8">Add</button>
+              </li>
+            </ul>
+
+            <p class="menu-key"><span class="tag">V</span> Vegetarian <span class="tag">VG</span> Vegan <span class="tag">GF</span> Gluten free</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="signature section">
+      <div class="container">
+        <div class="section-head section-head-row reveal">
+          <div>
+            <p class="kicker">Chef's favourites</p>
+            <h2>Plates people <em>come back for</em></h2>
+          </div>
+          <p class="head-note">Scroll sideways to see more.</p>
+        </div>
+      </div>
+
+      <div class="sig-row">
+        <article class="sig-card">
+          <img src="https://images.unsplash.com/photo-1597692493647-25bd4240a3f2?auto=format&fit=crop&w=900&q=80" alt="Mushroom pasta on a black plate">
+          <div class="sig-body">
+            <span>Pasta</span>
+            <h3>Black truffle tagliolini</h3>
+            <div class="sig-foot">
+              <b>$26</b>
+              <button class="add-btn" type="button" data-name="Black truffle tagliolini" data-price="26">Add</button>
+            </div>
+          </div>
+        </article>
+        <article class="sig-card">
+          <img src="https://images.unsplash.com/photo-1632389762435-8c53185e40ae?auto=format&fit=crop&w=900&q=80" alt="Pasta with prawns on a white plate">
+          <div class="sig-body">
+            <span>Pasta</span>
+            <h3>Linguine with prawns</h3>
+            <div class="sig-foot">
+              <b>$24</b>
+              <button class="add-btn" type="button" data-name="Linguine with prawns" data-price="24">Add</button>
+            </div>
+          </div>
+        </article>
+        <article class="sig-card">
+          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=900&q=80" alt="Carbonara on a plate with a fork">
+          <div class="sig-body">
+            <span>Pasta</span>
+            <h3>Spaghetti carbonara</h3>
+            <div class="sig-foot">
+              <b>$18</b>
+              <button class="add-btn" type="button" data-name="Spaghetti carbonara" data-price="18">Add</button>
+            </div>
+          </div>
+        </article>
+        <article class="sig-card">
+          <img src="https://images.unsplash.com/photo-1676300185089-8781af127fee?auto=format&fit=crop&w=900&q=80" alt="Tomatoes and mozzarella on a white plate">
+          <div class="sig-body">
+            <span>Antipasti</span>
+            <h3>Caprese di bufala</h3>
+            <div class="sig-foot">
+              <b>$13</b>
+              <button class="add-btn" type="button" data-name="Caprese di bufala" data-price="13">Add</button>
+            </div>
+          </div>
+        </article>
+        <article class="sig-card">
+          <img src="https://images.unsplash.com/photo-1654870032519-9db00597cd78?auto=format&fit=crop&w=900&q=80" alt="Platter of cannoli">
+          <div class="sig-body">
+            <span>Dolci</span>
+            <h3>Pistachio cannoli</h3>
+            <div class="sig-foot">
+              <b>$8</b>
+              <button class="add-btn" type="button" data-name="Pistachio cannoli" data-price="8">Add</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tasting section" id="tasting">
+      <div class="container tasting-grid">
+        <div class="tasting-text reveal">
+          <p class="kicker kicker-light">New &middot; Tasting menu</p>
+          <h2>Turn the pages <em>of tonight.</em></h2>
+          <p>Our five-course tasting menu changes with the season. Open the little menu book and turn the pages to see every course, just like at your table.</p>
+          <ul class="tasting-facts">
+            <li><b>5</b><span>courses</span></li>
+            <li><b>2 h</b><span>at the table</span></li>
+            <li><b>$85</b><span>per person</span></li>
+          </ul>
+        </div>
+
+        <div class="book-wrap reveal">
+          <div class="book">
+            <input type="checkbox" id="page1">
+            <input type="checkbox" id="page2">
+            <input type="checkbox" id="page3">
+
+            <div class="book-base base-left">
+              <p class="page-kicker">Autumn 2026</p>
+              <p class="page-quote">"We cook what the harbour and the hills give us this week."</p>
+              <p class="page-sign">Chef Marco Bellini</p>
+            </div>
+
+            <div class="book-base base-right">
+              <p class="page-kicker">Buon appetito</p>
+              <p class="page-quote">Thank you for reading. We look forward to cooking for you.</p>
+            </div>
+
+            <div class="sheet s1">
+              <div class="face front cover">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <path d="M16 29V12" />
+                  <path d="M16 18c-5 0-8-3-9-8 5 0 8 3 9 8Z" />
+                  <path d="M16 14c4 0 7-3 8-7-4 0-7 3-8 7Z" />
+                  <ellipse cx="16" cy="6" rx="2.5" ry="3.5" />
+                </svg>
+                <p class="cover-title">Olivo</p>
+                <p class="cover-sub">Menu degustazione</p>
+                <label for="page1" class="turn">Open the menu</label>
+              </div>
+              <div class="face back">
+                <span class="course-no">I</span>
+                <p class="page-kicker">Antipasto</p>
+                <h3>Caprese di bufala</h3>
+                <p>Buffalo mozzarella, three kinds of tomato and basil oil.</p>
+                <label for="page1" class="turn turn-back">Back</label>
+              </div>
+            </div>
+
+            <div class="sheet s2">
+              <div class="face front">
+                <span class="course-no">II</span>
+                <p class="page-kicker">Primo</p>
+                <h3>Tagliatelle ai funghi</h3>
+                <p>Hand-cut egg pasta, wild mushrooms and thyme butter.</p>
+                <label for="page2" class="turn">Next page</label>
+              </div>
+              <div class="face back">
+                <span class="course-no">III</span>
+                <p class="page-kicker">Pesce</p>
+                <h3>Linguine with prawns</h3>
+                <p>Harbour prawns, cherry tomato and a little chilli.</p>
+                <label for="page2" class="turn turn-back">Back</label>
+              </div>
+            </div>
+
+            <div class="sheet s3">
+              <div class="face front">
+                <span class="course-no">IV</span>
+                <p class="page-kicker">Secondo</p>
+                <h3>Slow-braised short rib</h3>
+                <p>Red wine, soft polenta and fresh gremolata.</p>
+                <label for="page3" class="turn">Next page</label>
+              </div>
+              <div class="face back">
+                <span class="course-no">V</span>
+                <p class="page-kicker">Dolce</p>
+                <h3>Tiramisu della casa</h3>
+                <p>Five courses for $85 per person, or $120 with wine pairing.</p>
+                <div class="book-buy">
+                  <button class="add-btn" type="button" data-name="Tasting menu" data-price="85">Tasting $85</button>
+                  <button class="add-btn" type="button" data-name="Tasting menu with wine" data-price="120">With wine $120</button>
+                </div>
+                <label for="page3" class="turn turn-back">Back</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story section" id="story">
+      <div class="container story-grid">
+        <div class="story-media reveal">
+          <img class="story-big" src="https://images.unsplash.com/photo-1697659602792-31dcb2a5a4ec?auto=format&fit=crop&w=1000&q=80" alt="Chef plating food in the kitchen">
+          <img class="story-small" src="https://images.unsplash.com/photo-1736827889023-9b0ca786a8fc?auto=format&fit=crop&w=700&q=80" alt="Restaurant dining room">
+        </div>
+        <div class="story-text reveal">
+          <p class="kicker">Our story</p>
+          <h2>A small kitchen <em>with a big table.</em></h2>
+          <p>Olivo started in 1998 as six tables and one stove next to the fish market. Marco's grandmother wrote the first menu by hand, and her tagliatelle is still on it today.</p>
+          <p>We buy from farmers and fishermen we know by name, make our pasta every morning and keep the kitchen open late, because good dinners should never be rushed.</p>
+          <dl class="story-facts">
+            <div>
+              <dt>28</dt>
+              <dd>Years by the harbour</dd>
+            </div>
+            <div>
+              <dt>120</dt>
+              <dd>Wines from small vineyards</dd>
+            </div>
+            <div>
+              <dt>6 am</dt>
+              <dd>Fresh pasta every day</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Contact</p>
+          <h2>Come <em>and find us</em></h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <div class="contact-block">
+              <span>Address</span>
+              <p>Via del Porto 14<br>Old Harbour, 16126</p>
+            </div>
+            <div class="contact-block">
+              <span>Reservations</span>
+              <p><a href="tel:+15550142290">+1 (555) 014-2290</a><br><a href="mailto:tavola@olivo.example">tavola@olivo.example</a></p>
+            </div>
+            <div class="contact-block">
+              <span>Opening hours</span>
+              <ul class="hours">
+                <li><b>Monday</b><i></i><em>Closed</em></li>
+                <li><b>Tue – Thu</b><i></i><em>12:00 – 23:00</em></li>
+                <li><b>Fri – Sat</b><i></i><em>12:00 – 00:00</em></li>
+                <li><b>Sunday</b><i></i><em>12:00 – 22:00</em></li>
+              </ul>
+            </div>
+            <p class="contact-note">Groups of 8 or more, please call us. The terrace is open from April to October.</p>
+          </div>
+
+          <div class="contact-media reveal">
+            <div class="map">
+              <iframe src="https://www.google.com/maps?q=Porto+Antico+Genova&output=embed" loading="lazy" title="Olivo on the map"></iframe>
+            </div>
+            <div class="terrace">
+              <img src="https://images.unsplash.com/photo-1764099362403-16ee561b079a?auto=format&fit=crop&w=900&q=80" alt="Restaurant terrace with lanterns at dusk">
+              <p>The terrace at dusk</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="account section" id="account">
+      <div class="container account-grid">
+        <div class="account-text reveal">
+          <p class="kicker kicker-light">Amici di Olivo</p>
+          <h2>Sign in and <em>skip the queue.</em></h2>
+          <p>Members can order ahead for pick-up, save favourite dishes and get a free glass of prosecco on their birthday.</p>
+        </div>
+
+        <div class="account-card reveal">
+          <form class="login" id="loginForm" novalidate>
+            <label for="loginName">Name</label>
+            <input type="text" id="loginName" placeholder="Your name" autocomplete="username">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Your password" autocomplete="current-password">
+            <button type="submit" class="btn btn-terra btn-full">Sign in</button>
+          </form>
+
+          <div class="welcome" id="welcome">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" /></svg>
+            <h3>Benvenuto!</h3>
+            <p id="welcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-word">Olivo</p>
+      <div class="footer-row">
+        <nav class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#tasting">Tasting</a>
+          <a href="#story">Story</a>
+          <a href="#contact">Contact</a>
+          <a href="#account">Account</a>
+        </nav>
+        <p>&copy; 2026 Olivo Cucina &amp; Vino</p>
+        <p>Photos from Unsplash</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart" id="cart" aria-label="Your order">
+    <div class="cart-head">
+      <h3>Your order</h3>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+    </div>
+    <p class="cart-empty" id="cartEmpty">Nothing here yet. Add something tasty from the menu.</p>
+    <ul class="cart-items" id="cartItems"></ul>
+    <div class="cart-foot">
+      <div class="cart-total">
+        <span>Total</span>
+        <b id="cartTotal">$0</b>
+      </div>
+      <button class="btn btn-terra btn-full" id="checkout" type="button">Place order</button>
+    </div>
+  </aside>
+
+  <div class="alert" id="alert" hidden>
+    <div class="alert-box" role="alertdialog" aria-labelledby="alertTitle">
+      <span class="alert-icon" id="alertIcon">!</span>
+      <h3 id="alertTitle">Title</h3>
+      <p id="alertText">Message</p>
+      <button type="button" id="alertButton">OK</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
